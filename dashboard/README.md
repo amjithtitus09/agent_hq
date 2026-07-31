@@ -20,7 +20,7 @@ No build step, no framework, no dependency. Four files ship:
 One line in `index.html`:
 
 ```html
-<meta name="agent-hq:engine-repo" content="agentalec/agent_hq">
+<meta name="agent-hq:engine-repo" content="amjithtitus09/agent_hq">
 ```
 
 The engine repo must be **public** — that is what makes the state branch

@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-29T02:16:23Z",
-  "engine_repo": "agentalec/agent_hq",
+  "engine_repo": "amjithtitus09/agent_hq",
   "tickets": [
     {
       "ticket_id": "20",
@@ -27,7 +27,7 @@
           "chain_depth": 0,
           "source_event_id": "20:labeled:2026-07-25T17:59:58Z",
           "enqueue_index": 0,
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "deadline": "2026-07-25T18:31:11Z",
           "attempt_started_at": "2026-07-25T18:01:11Z",
           "base_commit": "5466816828ba496f9d4e6099e77360eb516ece31"
@@ -82,7 +82,7 @@
           "chain_depth": 0,
           "source_event_id": "20:labeled:2026-07-29T12:10:55Z",
           "enqueue_index": 0,
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "deadline": "2026-07-29T12:42:00Z",
           "attempt_started_at": "2026-07-29T12:12:00Z",
           "base_commit": "5466816828ba496f9d4e6099e77360eb516ece31",
@@ -92,7 +92,7 @@
       ],
       "work_repos": [
         {
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "branch": "agent-hq/20",
           "base_branch": "develop",
           "recorded_head": "5466816828ba496f9d4e6099e77360eb516ece31",
@@ -106,7 +106,7 @@
       "pinned_comment_id": 5043111001,
       "work_repos": [
         {
-          "repo": "agentalec/care_docs",
+          "repo": "amjithtitus09/docs-1",
           "branch": "agent-hq/35",
           "base_branch": "develop",
           "recorded_head": "b21f0ac9de1145f2b0dd9a1e6a4c8f2210aa77bc"
@@ -133,7 +133,7 @@
             "specs/35/spec.md"
           ],
           "chain_depth": 0,
-          "repo": "agentalec/care_docs",
+          "repo": "amjithtitus09/docs-1",
           "gate_request_id": "gr_9f21",
           "gate_requested_at": "2026-07-26T23:04:11Z"
         }
@@ -145,11 +145,11 @@
       "pinned_comment_id": 5043222002,
       "work_repos": [
         {
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "branch": "agent-hq/41",
           "base_branch": "develop",
           "recorded_head": "77aa10bc4419e0f2a1cc9928bb31d4e2200f9911",
-          "pr_ref": "agentalec/care_fe#12"
+          "pr_ref": "amjithtitus09/care_fe-1#12"
         }
       ],
       "runs": [
@@ -196,7 +196,7 @@
       "status": "ACTIVE",
       "work_repos": [
         {
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "branch": "agent-hq/44",
           "base_branch": "develop"
         }
@@ -227,11 +227,11 @@
       "status": "AWAITING_MERGE",
       "work_repos": [
         {
-          "repo": "agentalec/care",
+          "repo": "amjithtitus09/care",
           "branch": "agent-hq/38",
           "base_branch": "develop",
           "recorded_head": "5512ba9017cc4411de99aa2233445566778899aa",
-          "pr_ref": "agentalec/care#91"
+          "pr_ref": "amjithtitus09/care#91"
         }
       ],
       "runs": [
@@ -265,7 +265,7 @@
       "block_source": "engine",
       "work_repos": [
         {
-          "repo": "agentalec/care_ocr",
+          "repo": "amjithtitus09/care_ocr",
           "branch": "agent-hq/27",
           "base_branch": "main"
         }
@@ -314,7 +314,7 @@
           "chain_depth": 0,
           "source_event_id": "3:opened:2026-07-22T08:19:47Z",
           "enqueue_index": 0,
-          "repo": "agentalec/care_docs",
+          "repo": "amjithtitus09/docs-1",
           "deadline": "2026-07-22T08:50:44Z",
           "attempt_started_at": "2026-07-22T08:20:44Z",
           "base_commit": "dbd221992b4569412c1969bffff99f2642160205"
@@ -327,11 +327,11 @@
       "pinned_comment_id": 5043543793,
       "work_repos": [
         {
-          "repo": "agentalec/care_fe",
+          "repo": "amjithtitus09/care_fe-1",
           "branch": "agent-hq/30",
           "base_branch": "develop",
           "recorded_head": "3ce3813d3abfc882a54456182b93fe7e369283b3",
-          "pr_ref": "agentalec/care_fe#6"
+          "pr_ref": "amjithtitus09/care_fe-1#6"
         }
       ],
       "runs": [
@@ -591,11 +591,11 @@
       "status": "DONE",
       "work_repos": [
         {
-          "repo": "agentalec/care_docs",
+          "repo": "amjithtitus09/docs-1",
           "branch": "agent-hq/22",
           "base_branch": "main",
           "recorded_head": "aa11bb22cc33dd44ee55ff6677889900aabbccdd",
-          "pr_ref": "agentalec/care_docs#3"
+          "pr_ref": "amjithtitus09/docs-1#3"
         }
       ],
       "runs": [

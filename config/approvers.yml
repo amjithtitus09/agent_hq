@@ -1,14 +1,14 @@
-# Approvers config (§6). Pilot: agentalec decides every gate; add real
+# Approvers config (§6). Pilot: amjithtitus09 decides every gate; add real
 # reviewers per group as the deployment grows.
 groups:
   product-owners:
-    members: [agentalec]
+    members: [amjithtitus09]
   architects:
-    members: [agentalec]
+    members: [amjithtitus09]
   clinical-reviewers:
-    members: [agentalec]
+    members: [amjithtitus09]
   escalation:
-    members: [agentalec]
+    members: [amjithtitus09]
 working_hours:
   timezone: Asia/Kolkata
   start: 9

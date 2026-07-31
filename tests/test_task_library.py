@@ -80,7 +80,7 @@ def test_gate_tasks_resolve_to_constructible_adapters():
     for taskdef in gate_tasks:
         for gate in taskdef["gates"]["post"]:
             adapter_name = resolve_binding(config, "gate", gate["adapter"], [])
-            adapter = build_port_adapter(config, "gate", adapter_name, repo="agentalec/care")
+            adapter = build_port_adapter(config, "gate", adapter_name, repo="amjithtitus09/care")
             assert adapter is not None
 
 

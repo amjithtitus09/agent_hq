@@ -1,10 +1,10 @@
 # Projects config (§6).
 repos:
-  - agentalec/care
-  - agentalec/care_fe
-  - agentalec/care_docs
+  - amjithtitus09/care
+  - amjithtitus09/care_fe-1
+  - amjithtitus09/docs-1
 intake_label: hq:intake
-engine_repo: agentalec/agent_hq
+engine_repo: amjithtitus09/agent_hq
 initial_task: spec
 # Enqueued when an approver sends work back with `/agent-hq request-changes`
 # on a work-repo PR. Names the task, so the engine keeps no task-name
@@ -19,5 +19,5 @@ intake:
   min_body_words: 30
   excluded_labels:
     - hq:excluded
-public: false
+public: true
 public_safe_label: hq:public-safe

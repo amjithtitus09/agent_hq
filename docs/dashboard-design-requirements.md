@@ -50,11 +50,11 @@ All examples below are real documents from the pilot's state branch.
   "status": "DONE",
   "work_repos": [
     {
-      "repo": "agentalec/care_fe",
+      "repo": "amjithtitus09/care_fe-1",
       "branch": "agent-hq/30",
       "base_branch": "develop",
       "recorded_head": "3ce3813d3abfc882a54456182b93fe7e369283b3",
-      "pr_ref": "agentalec/care_fe#6"
+      "pr_ref": "amjithtitus09/care_fe-1#6"
     }
   ],
   "runs": [ ... ]
@@ -90,7 +90,7 @@ field may be absent entirely rather than null.**
   "chain_depth": 0,
   "source_event_id": "3:opened:2026-07-22T08:19:47Z",
   "enqueue_index": 0,
-  "repo": "agentalec/care_docs",
+  "repo": "amjithtitus09/docs-1",
   "deadline": "2026-07-22T08:50:44Z",
   "attempt_started_at": "2026-07-22T08:20:44Z",
   "base_commit": "dbd221992b4569412c1969bffff99f2642160205"
