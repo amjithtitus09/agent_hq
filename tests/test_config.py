@@ -19,7 +19,7 @@ def test_pilot_config_loads_clean():
     assert config.projects["initial_task"] == "spec"
     assert config.projects["intake"]["min_body_words"] == 30
     assert config.projects["intake"]["excluded_labels"] == ["hq:excluded"]
-    assert config.projects["public"] is False
+    assert config.projects["public"] is True
     assert config.projects["public_safe_label"] == "hq:public-safe"
     assert config.repos["amjithtitus09/care"]["base_branch"] == "develop"
     assert "product-owners" in config.approvers["groups"]

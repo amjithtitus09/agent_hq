@@ -19,5 +19,5 @@ intake:
   min_body_words: 30
   excluded_labels:
     - hq:excluded
-public: false
+public: true
 public_safe_label: hq:public-safe
