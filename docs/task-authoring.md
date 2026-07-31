@@ -231,7 +231,7 @@ A task rarely wants to build its own environment. `repos.yml` carries a
 task that has no entry of its own:
 
 ```yaml
-agentalec/care_fe:
+amjithtitus09/care_fe-1:
   setup:
     default: npm ci
     qa: |

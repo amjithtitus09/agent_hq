@@ -13,15 +13,15 @@ SCHEMAS_DIR = REPO_ROOT / "schemas"
 def test_pilot_config_loads_clean():
     config = load_config(CONFIG_DIR, SCHEMAS_DIR)
     assert config.components["executor"]["adapter"] == "copilot-cli"
-    assert "agentalec/care" in config.repos
+    assert "amjithtitus09/care" in config.repos
     assert config.projects["intake_label"] == "hq:intake"
-    assert config.projects["engine_repo"] == "agentalec/agent_hq"
+    assert config.projects["engine_repo"] == "amjithtitus09/agent_hq"
     assert config.projects["initial_task"] == "spec"
     assert config.projects["intake"]["min_body_words"] == 30
     assert config.projects["intake"]["excluded_labels"] == ["hq:excluded"]
     assert config.projects["public"] is False
     assert config.projects["public_safe_label"] == "hq:public-safe"
-    assert config.repos["agentalec/care"]["base_branch"] == "develop"
+    assert config.repos["amjithtitus09/care"]["base_branch"] == "develop"
     assert "product-owners" in config.approvers["groups"]
     assert config.budgets["ticket_cap_usd"] == 25
 

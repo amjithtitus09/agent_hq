@@ -10,11 +10,11 @@ the bottom is the checklist to burn down. Complements `docs/local-testing.md`
 
 | Piece | Value |
 |---|---|
-| Engine repo | `agentalec/agent_hq` (issues = tickets; state on `agent-hq-state`) |
-| Work repos | `agentalec/care` (`backend`, base `develop`), `agentalec/care_fe` (`frontend`, base `develop`), `agentalec/care_docs` (`docs`, base `main`) |
+| Engine repo | `amjithtitus09/agent_hq` (issues = tickets; state on `agent-hq-state`) |
+| Work repos | `amjithtitus09/care` (`backend`, base `develop`), `amjithtitus09/care_fe-1` (`frontend`, base `develop`), `amjithtitus09/docs-1` (`docs`, base `main`) |
 | Route | intake → `spec` (product-owner gate; fans out ≤3 `implement`) → `implement` (draft PR) ↔ `review` (loops to `implement` on blockers, prompt-capped 3 rounds → park; else `finalize`) → `finalize` (summary, close) |
 | Executor | `copilot-cli`, `claude-sonnet-4.5`, billed via Copilot seat (`cost_usd` records 0.0 — deviation 9) |
-| Approver (all gates) | `agentalec` |
+| Approver (all gates) | `amjithtitus09` |
 
 ## Preconditions
 
@@ -26,7 +26,7 @@ the bottom is the checklist to burn down. Complements `docs/local-testing.md`
   (Copilot-seat account, user-owned fine-grained PAT, account permission
   **Copilot Requests: Read**, no repo access).
 - Labels on the engine repo: `hq:intake`, `hq:excluded`.
-- Kill switch off: `gh variable set AGENT_HQ_KILL_SWITCH --repo agentalec/agent_hq --body "0"`.
+- Kill switch off: `gh variable set AGENT_HQ_KILL_SWITCH --repo amjithtitus09/agent_hq --body "0"`.
 
 ## Procedure
 
@@ -37,7 +37,7 @@ the bottom is the checklist to burn down. Complements `docs/local-testing.md`
    previous instructions").
 
    ```bash
-   gh issue create --repo agentalec/agent_hq --label "hq:intake" \
+   gh issue create --repo amjithtitus09/agent_hq --label "hq:intake" \
      --title "<task>" --body "<≥30 words, one routing keyword>"
    ```
 
@@ -59,7 +59,7 @@ the bottom is the checklist to burn down. Complements `docs/local-testing.md`
 
    Decisions are only noticed by the next dispatch sweep (~15-min cron until
    Task 14 lands) — wake it manually:
-   `gh workflow run dispatch.yml --repo agentalec/agent_hq`.
+   `gh workflow run dispatch.yml --repo amjithtitus09/agent_hq`.
 
 5. **Implement** — expect a run per affected repo, committing on the stable
    `agent-hq/<issue>` branch cut from the repo's `base_branch`, and one
@@ -73,17 +73,17 @@ the bottom is the checklist to burn down. Complements `docs/local-testing.md`
 
 ```bash
 # Workflow surface
-gh run list --repo agentalec/agent_hq --limit 10
-gh run view <run-db-id> --repo agentalec/agent_hq --log-failed
+gh run list --repo amjithtitus09/agent_hq --limit 10
+gh run view <run-db-id> --repo amjithtitus09/agent_hq --log-failed
 
 # Ticket state / events / artifacts (state branch is plain git+JSON)
-gh api "repos/agentalec/agent_hq/contents/tickets/<n>/state.json?ref=agent-hq-state" -q .content | base64 -d | python3 -m json.tool
-gh api "repos/agentalec/agent_hq/contents/tickets/<n>/events.jsonl?ref=agent-hq-state" -q .content | base64 -d
-gh api "repos/agentalec/agent_hq/contents/tickets/<n>/artifacts/<run-id>/specs/<n>/spec.md?ref=agent-hq-state" -q .content | base64 -d
+gh api "repos/amjithtitus09/agent_hq/contents/tickets/<n>/state.json?ref=agent-hq-state" -q .content | base64 -d | python3 -m json.tool
+gh api "repos/amjithtitus09/agent_hq/contents/tickets/<n>/events.jsonl?ref=agent-hq-state" -q .content | base64 -d
+gh api "repos/amjithtitus09/agent_hq/contents/tickets/<n>/artifacts/<run-id>/specs/<n>/spec.md?ref=agent-hq-state" -q .content | base64 -d
 
 # Pause / resume all dispatch
-gh variable set AGENT_HQ_KILL_SWITCH --repo agentalec/agent_hq --body "1"   # pause
-gh variable set AGENT_HQ_KILL_SWITCH --repo agentalec/agent_hq --body "0"   # resume
+gh variable set AGENT_HQ_KILL_SWITCH --repo amjithtitus09/agent_hq --body "1"   # pause
+gh variable set AGENT_HQ_KILL_SWITCH --repo amjithtitus09/agent_hq --body "0"   # resume
 ```
 
 ## Findings log
@@ -115,7 +115,7 @@ gh variable set AGENT_HQ_KILL_SWITCH --repo agentalec/agent_hq --body "0"   # re
 - spec → gate → implement → finalize end-to-end ✅: post-PR-#6 spec proposed
   the `implement` handoff, the gate comment posted, `/agent-hq approve
   <run-id>` advanced it, implement landed on `agent-hq/7` and opened
-  `agentalec/care_docs#1` (draft), finalize wrote `summary.md`, posted the
+  `amjithtitus09/docs-1#1` (draft), finalize wrote `summary.md`, posted the
   closing summary, marked the PR ready, closed the issue, ticket `DONE`.
 - Known-usage retry ✅: implement attempt 0 failed in collect and was
   auto-re-enqueued (contrast round 1's unknown-spend block). Root cause was

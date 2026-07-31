@@ -400,7 +400,7 @@ def test_intake_eligible_enqueues_spec(config, taskdefs, store):
     assert spec_runs[0]["state"] == "QUEUED"
     # Root run repo resolved from the ticket (title mentions "backend") --
     # never null, so every downstream handoff has a concrete repo to inherit.
-    assert spec_runs[0]["repo"] == "agentalec/care"
+    assert spec_runs[0]["repo"] == "amjithtitus09/care"
 
 
 def test_intake_injection_flag_blocks_and_skips_enqueue(config, taskdefs, store):
@@ -469,7 +469,7 @@ def test_prepare_claims_and_writes_bundle(config, taskdefs, store, tmp_path):
     assert bundle.exists()
     written = json.loads(bundle.read_text())
     assert "control.json" in written["prompt"]
-    assert written["repo"] == "agentalec/care"
+    assert written["repo"] == "amjithtitus09/care"
     # no work_repos entry yet -> resolved SHA of the configured base branch
     assert written["base_commit"] == "sha-develop"
     assert written["output_paths"] == ["specs/7/spec.md"]
@@ -496,7 +496,7 @@ def test_prepare_base_commit_uses_recorded_head_and_survives_downstream_failure(
     run_task("buildrun", "collect", config, taskdefs, store,
              now_iso="2026-07-18T09:00:00Z", adapter_fn=adapters)
     recorded_head = next(
-        wr for wr in store.read_state("7")["work_repos"] if wr["repo"] == "agentalec/care"
+        wr for wr in store.read_state("7")["work_repos"] if wr["repo"] == "amjithtitus09/care"
     )["recorded_head"]
     assert recorded_head == "commit-buildrun"
 
@@ -605,16 +605,16 @@ def test_collect_opens_pr_records_pr_ref(config, taskdefs, store, tmp_path):
 
     runs = {r["run_id"]: r for r in store.read_state("7")["runs"]}
     assert runs["buildrun"]["state"] == "SUCCEEDED"
-    assert runs["buildrun"]["pr_ref"] == "agentalec/care#1"
+    assert runs["buildrun"]["pr_ref"] == "amjithtitus09/care#1"
     assert len(agent.opened_prs) == 1
     repo, branch, base, _title, body = agent.opened_prs[0]
-    assert repo == "agentalec/care"
+    assert repo == "amjithtitus09/care"
     assert branch == "agent-hq/7"  # stable per-issue branch, not per-run
     assert base == "develop"
     # The PR names the engine-repo ticket it came from -- the work repo has
     # nothing else pointing back at it. A reference, never a closing keyword:
     # the engine closes the issue itself, and one ticket can open several PRs.
-    assert "[agentalec/agent_hq#7](https://github.com/agentalec/agent_hq/issues/7)" in body
+    assert "[amjithtitus09/agent_hq#7](https://github.com/amjithtitus09/agent_hq/issues/7)" in body
     assert "closes" not in body.lower()
     assert _LONG_BODY in body  # the ticket's own text still rides along
 
@@ -644,7 +644,7 @@ def test_landed_commit_message_is_the_run_s_own_summary(config, taskdefs, store,
     assert subject == "feat: add the patient-age formatter"
     assert "Covers the under-1y case." in rest
     assert "Add backend endpoint" not in message  # not the ticket title
-    assert "agent-hq-ticket: agentalec/agent_hq#7" in rest
+    assert "agent-hq-ticket: amjithtitus09/agent_hq#7" in rest
     assert "agent-hq-run: build buildrun" in rest
 
 
@@ -688,12 +688,12 @@ def test_collect_reuses_stable_branch_and_pr_across_tasks(config, taskdefs, stor
              now_iso="2026-07-18T10:00:00Z", adapter_fn=adapters)
 
     work_repos = [
-        wr for wr in store.read_state("7")["work_repos"] if wr["repo"] == "agentalec/care"
+        wr for wr in store.read_state("7")["work_repos"] if wr["repo"] == "amjithtitus09/care"
     ]
     assert len(work_repos) == 1  # one branch/PR record, not two
     assert work_repos[0]["branch"] == "agent-hq/7"
     assert work_repos[0]["recorded_head"] == "commit-buildrun2"
-    assert work_repos[0]["pr_ref"] == "agentalec/care#1"
+    assert work_repos[0]["pr_ref"] == "amjithtitus09/care#1"
     assert len(agent.opened_prs) == 1  # the second task never opens a second PR
 
 
@@ -791,7 +791,7 @@ def test_collect_finalize_marks_pr_ready_and_waits_for_the_merge(config, taskdef
         lambda txn: (
             txn.set_ticket(
                 "7", status="ACTIVE", pinned_comment_id=None,
-                work_repos=[{"repo": "agentalec/care", "pr_ref": "agentalec/care#11"}],
+                work_repos=[{"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"}],
             ),
             txn.put_run("7", _run_dict("buildrun", "build", state="SUCCEEDED")),
             txn.put_run(
@@ -808,7 +808,7 @@ def test_collect_finalize_marks_pr_ready_and_waits_for_the_merge(config, taskdef
     run_task("finalrun", "collect", config, taskdefs, store,
              now_iso="2026-07-18T09:00:00Z", adapter_fn=adapters)
 
-    assert agent.ready_prs == ["agentalec/care#11"]
+    assert agent.ready_prs == ["amjithtitus09/care#11"]
     assert len(tracker.closing_summaries) == 1
     ticket_id, body, event_id = tracker.closing_summaries[0]
     assert ticket_id == "7"
@@ -944,8 +944,8 @@ def test_post_pr_comment_targets_the_work_repo_pr(config):
         seen["repo"] = repo
         return _M()
 
-    post_pr_comment(config, adapter_fn, "agentalec/care_fe#1", "findings", "run9:pr-review")
-    assert seen["repo"] == "agentalec/care_fe"
+    post_pr_comment(config, adapter_fn, "amjithtitus09/care_fe-1#1", "findings", "run9:pr-review")
+    assert seen["repo"] == "amjithtitus09/care_fe-1"
     assert seen["notify"] == ({"ticket_id": "1"}, "findings", "run9:pr-review")
 
 
@@ -965,7 +965,7 @@ def test_execute_discards_the_patch_of_a_task_that_writes_no_code(
     _seed(store, _run_dict("specrun", "spec", state="RUNNING"))
     prepare_dir_for(config, "specrun").mkdir(parents=True, exist_ok=True)
     (prepare_dir_for(config, "specrun") / "bundle.json").write_text(json.dumps({
-        "prompt": "p", "tools": [], "deadline": None, "repo": "agentalec/care_fe",
+        "prompt": "p", "tools": [], "deadline": None, "repo": "amjithtitus09/care_fe-1",
         "base_commit": "abc", "output_paths": [],
     }))
     agent = FakeAgent(tmp_path / "work")  # its materialize_work_patch returns "fake-patch"
@@ -1021,11 +1021,11 @@ def test_no_setup_configured_is_not_a_failure(tmp_path):
 
 
 def test_resolve_setup_prefers_the_task_over_default(config):
-    config.repos["agentalec/care_fe"]["setup"] = {"default": "npm ci", "qa": "make qa-env"}
+    config.repos["amjithtitus09/care_fe-1"]["setup"] = {"default": "npm ci", "qa": "make qa-env"}
 
-    assert resolve_setup(config, "agentalec/care_fe", "qa") == "make qa-env"
-    assert resolve_setup(config, "agentalec/care_fe", "implement") == "npm ci"
-    assert resolve_setup(config, "agentalec/care", "qa") is None  # no setup block
+    assert resolve_setup(config, "amjithtitus09/care_fe-1", "qa") == "make qa-env"
+    assert resolve_setup(config, "amjithtitus09/care_fe-1", "implement") == "npm ci"
+    assert resolve_setup(config, "amjithtitus09/care", "qa") is None  # no setup block
     assert resolve_setup(config, None, "qa") is None
 
 
@@ -1087,10 +1087,10 @@ def test_ledger_image_urls_flags_a_screenshot_that_was_never_produced():
         "![never taken](specs/19/screenshots/login-page-desktop.png)\n"
         "![escapes](../../etc/passwd)\n"
     )
-    out = _ledger_image_urls(md, "agentalec/agent_hq", "19", "run7", ledger)
+    out = _ledger_image_urls(md, "amjithtitus09/agent_hq", "19", "run7", ledger)
 
     assert (
-        "![taken](https://raw.githubusercontent.com/agentalec/agent_hq/agent-hq-state"
+        "![taken](https://raw.githubusercontent.com/amjithtitus09/agent_hq/agent-hq-state"
         "/tickets/19/artifacts/run7/specs/19/screenshots/real.png)"
     ) in out
     assert "_[missing screenshot: `specs/19/screenshots/login-page-desktop.png`" in out
@@ -1109,9 +1109,9 @@ def test_ledger_image_urls_rewrites_only_relative_images():
         "![remote](https://example.com/c.png)\n"
         "[not an image](specs/42/screenshots/a.png)\n"
     )
-    out = _ledger_image_urls(md, "agentalec/agent_hq", "42", "run7", ledger)
+    out = _ledger_image_urls(md, "amjithtitus09/agent_hq", "42", "run7", ledger)
 
-    prefix = "https://raw.githubusercontent.com/agentalec/agent_hq/agent-hq-state"
+    prefix = "https://raw.githubusercontent.com/amjithtitus09/agent_hq/agent-hq-state"
     assert f"![desktop]({prefix}/tickets/42/artifacts/run7/specs/42/screenshots/a.png)" in out
     assert f"![leading slash]({prefix}/tickets/42/artifacts/run7/specs/42/screenshots/b.png)" in out
     assert "![remote](https://example.com/c.png)" in out
@@ -1417,11 +1417,11 @@ def _awaiting_merge(store, work_repos):
 
 
 def test_sweep_closes_the_ticket_once_every_pr_is_merged(config, taskdefs, store, tmp_path):
-    _awaiting_merge(store, [{"repo": "agentalec/care", "pr_ref": "agentalec/care#11"}])
+    _awaiting_merge(store, [{"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"}])
     tracker = FakeTracker(_details())
     agent = FakeAgent(
         tmp_path / "work",
-        pr_states={"agentalec/care#11": {"state": "closed", "merged": True}},
+        pr_states={"amjithtitus09/care#11": {"state": "closed", "merged": True}},
     )
     adapters = _adapters(tracker=tracker, agent=agent)
 
@@ -1438,14 +1438,14 @@ def test_sweep_leaves_the_ticket_awaiting_while_a_pr_is_still_open(
     _awaiting_merge(
         store,
         [
-            {"repo": "agentalec/care", "pr_ref": "agentalec/care#11"},
-            {"repo": "agentalec/care_fe", "pr_ref": "agentalec/care_fe#4"},
+            {"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"},
+            {"repo": "amjithtitus09/care_fe-1", "pr_ref": "amjithtitus09/care_fe-1#4"},
         ],
     )
     tracker = FakeTracker(_details())
     agent = FakeAgent(
         tmp_path / "work",
-        pr_states={"agentalec/care#11": {"state": "closed", "merged": True}},
+        pr_states={"amjithtitus09/care#11": {"state": "closed", "merged": True}},
     )  # care_fe#4 defaults to open
 
     _sweep(config, taskdefs, store, FakeWorkflowApi(),
@@ -1460,11 +1460,11 @@ def test_sweep_blocks_and_escalates_when_a_pr_is_closed_unmerged(
 ):
     """Closed-unmerged is a human declining the work -- it must reach a
     person, not complete silently."""
-    _awaiting_merge(store, [{"repo": "agentalec/care", "pr_ref": "agentalec/care#11"}])
+    _awaiting_merge(store, [{"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"}])
     tracker = FakeTracker(_details())
     agent = FakeAgent(
         tmp_path / "work",
-        pr_states={"agentalec/care#11": {"state": "closed", "merged": False}},
+        pr_states={"amjithtitus09/care#11": {"state": "closed", "merged": False}},
     )
     adapters = _adapters(tracker=tracker, agent=agent)
 
@@ -1484,15 +1484,15 @@ def test_sweep_abandoned_pr_outweighs_a_merged_sibling(config, taskdefs, store, 
     _awaiting_merge(
         store,
         [
-            {"repo": "agentalec/care", "pr_ref": "agentalec/care#11"},
-            {"repo": "agentalec/care_fe", "pr_ref": "agentalec/care_fe#4"},
+            {"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"},
+            {"repo": "amjithtitus09/care_fe-1", "pr_ref": "amjithtitus09/care_fe-1#4"},
         ],
     )
     agent = FakeAgent(
         tmp_path / "work",
         pr_states={
-            "agentalec/care#11": {"state": "closed", "merged": True},
-            "agentalec/care_fe#4": {"state": "closed", "merged": False},
+            "amjithtitus09/care#11": {"state": "closed", "merged": True},
+            "amjithtitus09/care_fe-1#4": {"state": "closed", "merged": False},
         },
     )
     tracker = FakeTracker(_details())
@@ -1507,11 +1507,11 @@ def test_sweep_abandoned_pr_outweighs_a_merged_sibling(config, taskdefs, store, 
 def test_sweep_merge_close_is_idempotent_across_passes(config, taskdefs, store, tmp_path):
     """A second sweep must not re-close or re-comment: the DONE status is the
     key, exactly as ACTIVE keys the first half."""
-    _awaiting_merge(store, [{"repo": "agentalec/care", "pr_ref": "agentalec/care#11"}])
+    _awaiting_merge(store, [{"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"}])
     tracker = FakeTracker(_details())
     agent = FakeAgent(
         tmp_path / "work",
-        pr_states={"agentalec/care#11": {"state": "closed", "merged": True}},
+        pr_states={"amjithtitus09/care#11": {"state": "closed", "merged": True}},
     )
     adapters = _adapters(tracker=tracker, agent=agent)
 
@@ -1525,7 +1525,7 @@ def test_sweep_merge_close_is_idempotent_across_passes(config, taskdefs, store, 
 # -- PR-comment feedback (sweep) ----------------------------------------------
 
 
-_WORK_REPO = [{"repo": "agentalec/care", "pr_ref": "agentalec/care#11"}]
+_WORK_REPO = [{"repo": "amjithtitus09/care", "pr_ref": "amjithtitus09/care#11"}]
 
 
 def _feedback_config(config, task_id="build", group="product-owners"):
@@ -1567,7 +1567,7 @@ def test_sweep_pr_request_changes_from_an_approver_queues_rework(config, taskdef
     queued = [r for r in state["runs"] if r["state"] == "QUEUED"]
     assert len(queued) == 1
     assert queued[0]["task_id"] == "build"
-    assert queued[0]["repo"] == "agentalec/care"
+    assert queued[0]["repo"] == "amjithtitus09/care"
     # The reason reaches the prompt through the same event the gate's own
     # CHANGES_REQUESTED path writes.
     assert _rework_comments(store, "7", queued[0]["run_id"]) == "@example-alice: fix the N+1"
