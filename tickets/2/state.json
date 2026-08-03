@@ -536,7 +536,12 @@
       "ticket_id": "2",
       "state": "RUNNING",
       "attempt": 0,
-      "bindings": {},
+      "bindings": {
+        "tracker": "github-issues",
+        "agent-session": "copilot-cli",
+        "messaging": "github-comment",
+        "gate": "github-issue-comment"
+      },
       "cost_usd": null,
       "tokens": null,
       "usage_known": false,
@@ -547,7 +552,8 @@
       "queue_seq": 16,
       "repo": "amjithtitus09/care_fe-1",
       "deadline": "2026-08-03T08:27:31Z",
-      "attempt_started_at": "2026-08-03T07:57:31Z"
+      "attempt_started_at": "2026-08-03T07:57:31Z",
+      "base_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62"
     }
   ],
   "block_reason": null,
