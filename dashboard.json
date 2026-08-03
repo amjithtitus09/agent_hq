@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T05:32:58Z",
+  "generated_at": "2026-08-03T05:33:00Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -982,7 +982,12 @@
           "ticket_id": "2",
           "state": "RUNNING",
           "attempt": 0,
-          "bindings": {},
+          "bindings": {
+            "tracker": "github-issues",
+            "agent-session": "copilot-cli",
+            "messaging": "github-comment",
+            "gate": "github-issue-comment"
+          },
           "cost_usd": null,
           "tokens": null,
           "usage_known": false,
@@ -993,7 +998,8 @@
           "queue_seq": 0,
           "repo": "amjithtitus09/care_fe-1",
           "deadline": "2026-08-03T06:02:58Z",
-          "attempt_started_at": "2026-08-03T05:32:58Z"
+          "attempt_started_at": "2026-08-03T05:32:58Z",
+          "base_commit": "7f945410634cbfdb43c37980b9270ea9dc5301d2"
         }
       ],
       "block_reason": null,
