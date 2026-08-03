@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T06:26:32Z",
+  "generated_at": "2026-08-03T06:27:10Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -1209,7 +1209,7 @@
           "task_id": "spec",
           "task_version": 1,
           "ticket_id": "2",
-          "state": "QUEUED",
+          "state": "RUNNING",
           "attempt": 0,
           "bindings": {},
           "cost_usd": null,
@@ -1220,7 +1220,9 @@
           "source_event_id": "2:labeled:2026-08-03T06:26:09Z",
           "enqueue_index": 0,
           "queue_seq": 7,
-          "repo": "amjithtitus09/care_fe-1"
+          "repo": "amjithtitus09/care_fe-1",
+          "deadline": "2026-08-03T06:57:10Z",
+          "attempt_started_at": "2026-08-03T06:27:10Z"
         }
       ],
       "block_reason": null,
