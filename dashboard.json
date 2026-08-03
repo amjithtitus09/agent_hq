@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T06:21:44Z",
+  "generated_at": "2026-08-03T06:21:53Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -1136,7 +1136,7 @@
           "task_id": "qa",
           "task_version": 1,
           "ticket_id": "2",
-          "state": "RUNNING",
+          "state": "SUCCEEDED",
           "attempt": 0,
           "bindings": {
             "tracker": "github-issues",
@@ -1146,7 +1146,15 @@
           "cost_usd": 1.74,
           "tokens": 3526100,
           "usage_known": true,
-          "artifacts": [],
+          "artifacts": [
+            "specs/2/qa.md",
+            "specs/2/screenshots/ac1-no-button.png",
+            "specs/2/screenshots/ac2-create-first-report.png",
+            "specs/2/screenshots/debug-page.png",
+            "specs/2/screenshots/homepage.png",
+            "specs/2/screenshots/initial-state.png",
+            "specs/2/screenshots/navigation.png"
+          ],
           "chain_depth": 5,
           "parent_run_id": "82a780c97ba31eb9",
           "queue_seq": 5,
@@ -1158,7 +1166,36 @@
           ],
           "deadline": "2026-08-03T07:03:36Z",
           "attempt_started_at": "2026-08-03T06:03:36Z",
-          "base_commit": "637cfe9816538c700f35de0542199add39b6d5f8"
+          "base_commit": "637cfe9816538c700f35de0542199add39b6d5f8",
+          "output_commit": "637cfe9816538c700f35de0542199add39b6d5f8",
+          "pr_ref": "amjithtitus09/care_fe-1#1"
+        },
+        {
+          "run_id": "ace3f1fbbda58461",
+          "task_id": "finalize",
+          "task_version": 1,
+          "ticket_id": "2",
+          "state": "QUEUED",
+          "attempt": 0,
+          "bindings": {
+            "tracker": "github-issues",
+            "agent-session": "copilot-cli",
+            "messaging": "github-comment"
+          },
+          "cost_usd": null,
+          "tokens": null,
+          "usage_known": false,
+          "artifacts": [],
+          "chain_depth": 6,
+          "parent_run_id": "7a2855979018fbd9",
+          "queue_seq": 6,
+          "handoff_key": "finalize",
+          "repo": "amjithtitus09/care_fe-1",
+          "input_artifacts": [
+            "specs/2/spec.md",
+            "specs/2/review.md",
+            "specs/2/qa.md"
+          ]
         }
       ],
       "block_reason": null,
