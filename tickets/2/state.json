@@ -528,6 +528,23 @@
       "base_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62",
       "output_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62",
       "pr_ref": "amjithtitus09/care_fe-1#1"
+    },
+    {
+      "run_id": "be97bf77c78802b5",
+      "task_id": "spec",
+      "task_version": 1,
+      "ticket_id": "2",
+      "state": "QUEUED",
+      "attempt": 0,
+      "bindings": {},
+      "cost_usd": null,
+      "tokens": null,
+      "usage_known": false,
+      "artifacts": [],
+      "chain_depth": 0,
+      "source_event_id": "2:labeled:2026-08-03T07:53:50Z",
+      "enqueue_index": 0,
+      "queue_seq": 16
     }
   ],
   "block_reason": null,
