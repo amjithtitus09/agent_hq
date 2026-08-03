@@ -569,7 +569,8 @@
       "branch": "agent-hq/2",
       "base_branch": "develop",
       "recorded_head": "a00485a90a72fa0cd129a359c2d60ca817325c62",
-      "pr_ref": "amjithtitus09/care_fe-1#1"
+      "pr_ref": "amjithtitus09/care_fe-1#1",
+      "comments_polled_at": "2026-08-03T07:47:54Z"
     }
   ]
 }
