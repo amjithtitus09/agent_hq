@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T05:36:13Z",
+  "generated_at": "2026-08-03T05:36:22Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -980,7 +980,7 @@
           "task_id": "spec",
           "task_version": 1,
           "ticket_id": "2",
-          "state": "RUNNING",
+          "state": "SUCCEEDED",
           "attempt": 0,
           "bindings": {
             "tracker": "github-issues",
@@ -991,7 +991,9 @@
           "cost_usd": 0.351,
           "tokens": 380300,
           "usage_known": true,
-          "artifacts": [],
+          "artifacts": [
+            "specs/2/spec.md"
+          ],
           "chain_depth": 0,
           "source_event_id": "2:opened:2026-07-31T11:51:52Z",
           "enqueue_index": 0,
@@ -999,12 +1001,49 @@
           "repo": "amjithtitus09/care_fe-1",
           "deadline": "2026-08-03T06:02:58Z",
           "attempt_started_at": "2026-08-03T05:32:58Z",
-          "base_commit": "7f945410634cbfdb43c37980b9270ea9dc5301d2"
+          "base_commit": "7f945410634cbfdb43c37980b9270ea9dc5301d2",
+          "output_commit": "7f945410634cbfdb43c37980b9270ea9dc5301d2",
+          "pr_ref": null
+        },
+        {
+          "run_id": "344837a130dba006",
+          "task_id": "implement",
+          "task_version": 1,
+          "ticket_id": "2",
+          "state": "QUEUED",
+          "attempt": 0,
+          "bindings": {
+            "tracker": "github-issues",
+            "agent-session": "copilot-cli",
+            "messaging": "github-comment",
+            "gate": "github-issue-comment"
+          },
+          "cost_usd": null,
+          "tokens": null,
+          "usage_known": false,
+          "artifacts": [],
+          "chain_depth": 1,
+          "parent_run_id": "62ca3d6eda155740",
+          "queue_seq": 1,
+          "handoff_key": "implement-care_fe",
+          "repo": "amjithtitus09/care_fe-1",
+          "input_artifacts": [
+            "specs/2/spec.md"
+          ]
         }
       ],
       "block_reason": null,
       "block_source": null,
-      "interrupted_run_id": null
+      "interrupted_run_id": null,
+      "work_repos": [
+        {
+          "repo": "amjithtitus09/care_fe-1",
+          "branch": "agent-hq/2",
+          "base_branch": "develop",
+          "recorded_head": "7f945410634cbfdb43c37980b9270ea9dc5301d2",
+          "pr_ref": null
+        }
+      ]
     },
     {
       "ticket_id": "20",
