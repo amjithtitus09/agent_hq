@@ -500,7 +500,7 @@
       "task_id": "finalize",
       "task_version": 1,
       "ticket_id": "2",
-      "state": "QUEUED",
+      "state": "RUNNING",
       "attempt": 0,
       "bindings": {
         "tracker": "github-issues",
@@ -520,7 +520,9 @@
         "specs/2/spec.md",
         "specs/2/review.md",
         "specs/2/qa.md"
-      ]
+      ],
+      "deadline": "2026-08-03T08:04:41Z",
+      "attempt_started_at": "2026-08-03T07:49:41Z"
     }
   ],
   "block_reason": null,
