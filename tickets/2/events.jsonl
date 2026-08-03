@@ -32,3 +32,4 @@
 {"event_id": "7a2855979018fbd9:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "7a2855979018fbd9", "state": "SUCCEEDED", "artifacts": ["specs/2/qa.md", "specs/2/screenshots/ac1-no-button.png", "specs/2/screenshots/ac2-create-first-report.png", "specs/2/screenshots/debug-page.png", "specs/2/screenshots/homepage.png", "specs/2/screenshots/initial-state.png", "specs/2/screenshots/navigation.png"]}
 {"event_id": "ace3f1fbbda58461:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "ace3f1fbbda58461", "tokens": 138400, "cost_usd": 0.136}
 {"event_id": "ace3f1fbbda58461:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "ace3f1fbbda58461", "state": "SUCCEEDED", "artifacts": ["specs/2/summary.md"]}
+{"event_id": "99c0f7a33ab92c97:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "99c0f7a33ab92c97", "task_id": "spec", "task_version": 1, "state": "QUEUED", "bindings": {}}
