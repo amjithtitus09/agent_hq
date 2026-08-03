@@ -49,3 +49,4 @@
 {"event_id": "9e85bf217cba9678:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "9e85bf217cba9678", "task_id": "implement", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
 {"event_id": "e8425e59e81af375:fix-blockers:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "e8425e59e81af375", "detail": "Fix blockers: observations upsert uses wrong report ID (line 250); unconditional useQuery in loop (lines 174-180); selectedReportId re-initialization issue (lines 140-144)"}
 {"event_id": "e8425e59e81af375:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "e8425e59e81af375", "state": "SUCCEEDED", "artifacts": ["specs/2/review.md"]}
+{"event_id": "9e85bf217cba9678:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "9e85bf217cba9678", "tokens": 1515700, "cost_usd": 0.838}
