@@ -6,3 +6,7 @@
 {"event_id": "62ca3d6eda155740:implement-care_fe:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "62ca3d6eda155740", "detail": "Specification complete for supporting multiple diagnostic reports per Service Request. The task involves modifying DiagnosticReportForm.tsx to remove the single-report limit, filter used codes from the dropdown, and handle UI state for multiple reports."}
 {"event_id": "62ca3d6eda155740:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "62ca3d6eda155740", "state": "SUCCEEDED", "artifacts": ["specs/2/spec.md"]}
 {"event_id": "344837a130dba006:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "344837a130dba006", "tokens": 1108700, "cost_usd": 0.595}
+{"event_id": "344837a130dba006:review:proposed", "kind": "handoff.proposed", "ticket_id": "2", "run_id": "344837a130dba006", "detail": "Implementation complete, ready for review"}
+{"event_id": "7bb240b1eb168f6a:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "7bb240b1eb168f6a", "task_id": "review", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
+{"event_id": "344837a130dba006:review:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "344837a130dba006", "detail": "Implementation complete, ready for review"}
+{"event_id": "344837a130dba006:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "344837a130dba006", "state": "SUCCEEDED", "artifacts": []}
