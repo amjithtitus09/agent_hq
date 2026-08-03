@@ -16,3 +16,7 @@
 {"event_id": "7bb240b1eb168f6a:impl-2:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "7bb240b1eb168f6a", "detail": "Fix formatting error in tests/PLAYWRIGHT_GUIDE.md:90-94 (backticks concatenated without line breaks) and revert unrelated package-lock.json libc constraint removals."}
 {"event_id": "7bb240b1eb168f6a:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "7bb240b1eb168f6a", "state": "SUCCEEDED", "artifacts": ["specs/2/review.md"]}
 {"event_id": "1cb16f178bd342f4:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "1cb16f178bd342f4", "tokens": 1814600, "cost_usd": 0.928}
+{"event_id": "1cb16f178bd342f4:review:proposed", "kind": "handoff.proposed", "ticket_id": "2", "run_id": "1cb16f178bd342f4", "detail": "Implementation complete - ready for review"}
+{"event_id": "82a780c97ba31eb9:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "82a780c97ba31eb9", "task_id": "review", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
+{"event_id": "1cb16f178bd342f4:review:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "1cb16f178bd342f4", "detail": "Implementation complete - ready for review"}
+{"event_id": "1cb16f178bd342f4:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "1cb16f178bd342f4", "state": "SUCCEEDED", "artifacts": []}
