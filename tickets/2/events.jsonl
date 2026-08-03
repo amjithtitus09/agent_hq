@@ -64,3 +64,4 @@
 {"event_id": "d461e8855d268bf9:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "d461e8855d268bf9", "task_id": "review", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
 {"event_id": "9dbc03f3eae6106d:review:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "9dbc03f3eae6106d", "detail": "File upload fix implemented; ready for review"}
 {"event_id": "9dbc03f3eae6106d:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "9dbc03f3eae6106d", "state": "SUCCEEDED", "artifacts": []}
+{"event_id": "d461e8855d268bf9:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "d461e8855d268bf9", "tokens": 609300, "cost_usd": 0.439}
