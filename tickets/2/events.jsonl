@@ -69,3 +69,4 @@
 {"event_id": "a146205fcbc53aec:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "a146205fcbc53aec", "task_id": "qa", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
 {"event_id": "d461e8855d268bf9:amjithtitus09/agent_hq#2:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "d461e8855d268bf9", "detail": "Implementation complete with all blockers resolved. Ready for QA verification of multi-report creation workflow."}
 {"event_id": "d461e8855d268bf9:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "d461e8855d268bf9", "state": "SUCCEEDED", "artifacts": ["specs/2/review.md"]}
+{"event_id": "a146205fcbc53aec:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "a146205fcbc53aec", "tokens": 2019400, "cost_usd": 1.15}
