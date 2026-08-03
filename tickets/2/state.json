@@ -68,7 +68,7 @@
       "task_id": "review",
       "task_version": 1,
       "ticket_id": "2",
-      "state": "RUNNING",
+      "state": "SUCCEEDED",
       "attempt": 0,
       "bindings": {
         "tracker": "github-issues",
@@ -78,7 +78,9 @@
       "cost_usd": 0.358,
       "tokens": 617900,
       "usage_known": true,
-      "artifacts": [],
+      "artifacts": [
+        "specs/2/review.md"
+      ],
       "chain_depth": 2,
       "parent_run_id": "344837a130dba006",
       "queue_seq": 2,
@@ -89,7 +91,35 @@
       ],
       "deadline": "2026-08-03T06:13:39Z",
       "attempt_started_at": "2026-08-03T05:43:39Z",
-      "base_commit": "5b69b4fefc3fd510f46941b19e57fd88cd5bf9f8"
+      "base_commit": "5b69b4fefc3fd510f46941b19e57fd88cd5bf9f8",
+      "output_commit": "5b69b4fefc3fd510f46941b19e57fd88cd5bf9f8",
+      "pr_ref": "amjithtitus09/care_fe-1#1"
+    },
+    {
+      "run_id": "1cb16f178bd342f4",
+      "task_id": "implement",
+      "task_version": 1,
+      "ticket_id": "2",
+      "state": "QUEUED",
+      "attempt": 0,
+      "bindings": {
+        "tracker": "github-issues",
+        "agent-session": "copilot-cli",
+        "messaging": "github-comment"
+      },
+      "cost_usd": null,
+      "tokens": null,
+      "usage_known": false,
+      "artifacts": [],
+      "chain_depth": 3,
+      "parent_run_id": "7bb240b1eb168f6a",
+      "queue_seq": 3,
+      "handoff_key": "impl-2",
+      "repo": "amjithtitus09/care_fe-1",
+      "input_artifacts": [
+        "specs/2/spec.md",
+        "specs/2/review.md"
+      ]
     }
   ],
   "block_reason": null,
