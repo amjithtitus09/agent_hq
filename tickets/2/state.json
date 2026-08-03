@@ -203,7 +203,7 @@
       "task_id": "finalize",
       "task_version": 1,
       "ticket_id": "2",
-      "state": "RUNNING",
+      "state": "SUCCEEDED",
       "attempt": 0,
       "bindings": {
         "tracker": "github-issues",
@@ -213,7 +213,9 @@
       "cost_usd": 0.136,
       "tokens": 138400,
       "usage_known": true,
-      "artifacts": [],
+      "artifacts": [
+        "specs/2/summary.md"
+      ],
       "chain_depth": 6,
       "parent_run_id": "7a2855979018fbd9",
       "queue_seq": 6,
@@ -226,7 +228,9 @@
       ],
       "deadline": "2026-08-03T06:37:35Z",
       "attempt_started_at": "2026-08-03T06:22:35Z",
-      "base_commit": "637cfe9816538c700f35de0542199add39b6d5f8"
+      "base_commit": "637cfe9816538c700f35de0542199add39b6d5f8",
+      "output_commit": "637cfe9816538c700f35de0542199add39b6d5f8",
+      "pr_ref": "amjithtitus09/care_fe-1#1"
     }
   ],
   "block_reason": null,
