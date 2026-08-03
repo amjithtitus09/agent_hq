@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T07:47:16Z",
+  "generated_at": "2026-08-03T07:47:52Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -1429,7 +1429,7 @@
           "task_id": "qa",
           "task_version": 1,
           "ticket_id": "2",
-          "state": "RUNNING",
+          "state": "SUCCEEDED",
           "attempt": 0,
           "bindings": {
             "tracker": "github-issues",
@@ -1439,7 +1439,19 @@
           "cost_usd": 1.15,
           "tokens": 2019400,
           "usage_known": true,
-          "artifacts": [],
+          "artifacts": [
+            "specs/2/qa.md",
+            "specs/2/screenshots/error.png",
+            "specs/2/screenshots/facility-overview-authenticated.png",
+            "specs/2/screenshots/facility-overview.png",
+            "specs/2/screenshots/facility-page.png",
+            "specs/2/screenshots/home-page.png",
+            "specs/2/screenshots/service-1.png",
+            "specs/2/screenshots/service-2.png",
+            "specs/2/screenshots/service-detail.png",
+            "specs/2/screenshots/services-authenticated.png",
+            "specs/2/screenshots/services-list.png"
+          ],
           "chain_depth": 7,
           "parent_run_id": "d461e8855d268bf9",
           "queue_seq": 14,
@@ -1451,7 +1463,36 @@
           ],
           "deadline": "2026-08-03T08:29:41Z",
           "attempt_started_at": "2026-08-03T07:29:41Z",
-          "base_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62"
+          "base_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62",
+          "output_commit": "a00485a90a72fa0cd129a359c2d60ca817325c62",
+          "pr_ref": "amjithtitus09/care_fe-1#1"
+        },
+        {
+          "run_id": "e5a14c0944851477",
+          "task_id": "finalize",
+          "task_version": 1,
+          "ticket_id": "2",
+          "state": "QUEUED",
+          "attempt": 0,
+          "bindings": {
+            "tracker": "github-issues",
+            "agent-session": "copilot-cli",
+            "messaging": "github-comment"
+          },
+          "cost_usd": null,
+          "tokens": null,
+          "usage_known": false,
+          "artifacts": [],
+          "chain_depth": 8,
+          "parent_run_id": "a146205fcbc53aec",
+          "queue_seq": 15,
+          "handoff_key": "finalize",
+          "repo": "amjithtitus09/care_fe-1",
+          "input_artifacts": [
+            "specs/2/spec.md",
+            "specs/2/review.md",
+            "specs/2/qa.md"
+          ]
         }
       ],
       "block_reason": null,
