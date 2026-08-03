@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T06:49:27Z",
+  "generated_at": "2026-08-03T06:50:06Z",
   "tickets": [
     {
       "ticket_id": "11",
@@ -1269,7 +1269,7 @@
           "task_id": "review",
           "task_version": 1,
           "ticket_id": "2",
-          "state": "QUEUED",
+          "state": "RUNNING",
           "attempt": 0,
           "bindings": {
             "tracker": "github-issues",
@@ -1287,7 +1287,9 @@
           "repo": "amjithtitus09/care_fe-1",
           "input_artifacts": [
             "specs/2/spec.md"
-          ]
+          ],
+          "deadline": "2026-08-03T07:20:06Z",
+          "attempt_started_at": "2026-08-03T06:50:06Z"
         }
       ],
       "block_reason": null,
