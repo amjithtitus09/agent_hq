@@ -267,7 +267,7 @@
       "task_id": "implement",
       "task_version": 1,
       "ticket_id": "2",
-      "state": "QUEUED",
+      "state": "RUNNING",
       "attempt": 0,
       "bindings": {
         "tracker": "github-issues",
@@ -286,7 +286,9 @@
       "repo": "amjithtitus09/care_fe-1",
       "input_artifacts": [
         "specs/2/spec.md"
-      ]
+      ],
+      "deadline": "2026-08-03T08:02:19Z",
+      "attempt_started_at": "2026-08-03T06:32:19Z"
     }
   ],
   "block_reason": null,
