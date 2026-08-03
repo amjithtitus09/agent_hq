@@ -10,3 +10,4 @@
 {"event_id": "7bb240b1eb168f6a:queued", "kind": "run.queued", "ticket_id": "2", "run_id": "7bb240b1eb168f6a", "task_id": "review", "task_version": 1, "state": "QUEUED", "bindings": {"tracker": "github-issues", "agent-session": "copilot-cli", "messaging": "github-comment"}}
 {"event_id": "344837a130dba006:review:accepted", "kind": "handoff.accepted", "ticket_id": "2", "run_id": "344837a130dba006", "detail": "Implementation complete, ready for review"}
 {"event_id": "344837a130dba006:succeeded", "kind": "run.succeeded", "ticket_id": "2", "run_id": "344837a130dba006", "state": "SUCCEEDED", "artifacts": []}
+{"event_id": "7bb240b1eb168f6a:collected", "kind": "run.collected", "ticket_id": "2", "run_id": "7bb240b1eb168f6a", "tokens": 617900, "cost_usd": 0.358}
